@@ -44,7 +44,7 @@ def main():
         color = "red" if result == 1 else "green"  # Adjust this condition based on your model's output
 
         # Apply styling with HTML
-        styled_result = f'<p style="color:{color}; font-size:20px; text-align:center; font-weight:bold; background-color:#2A272A; padding:10px; border-radius: 15px;">{result}</p>'
+        styled_result = f'<p style="color:{color}; font-size:20px; text-align:center; font-weight:bold; background-color:#4B4A54; padding:10px; border-radius: 15px;">{result}</p>'
         
         # Display the styled result
         st.markdown(styled_result, unsafe_allow_html=True)
