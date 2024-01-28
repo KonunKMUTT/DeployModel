@@ -18,6 +18,7 @@ def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kc
         'troponin': [troponin],
         'female': [female],
         'male': [male]
+        })
 
     y_pred_new = model.predict(x_new)
     return y_pred_new
