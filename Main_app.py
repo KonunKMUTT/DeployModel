@@ -16,8 +16,8 @@ def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kc
         'glucose': [glucose],
         'kcm': [kcm],
         'troponin': [troponin],
-        female = st.checkbox("Female")
-        male = st.checkbox("Male"))
+        'female': [female],
+        'male': [male]
 
     y_pred_new = model.predict(x_new)
     return y_pred_new
@@ -33,10 +33,12 @@ def main():
     glucose = st.text_input("Enter glucose level:")
     kcm = st.text_input("Enter KCM:")
     troponin = st.text_input("Enter troponin level:")
-    female = st.checkbox("Female")
-    male = st.checkbox("Male")
-
+     # Use a single checkbox for gender selection
+    gender = st.checkbox("Female / Male")
+       
     if st.button("Predict"):
+        female = gender
+        male = not gender
         result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
         
         # Set color based on the result
