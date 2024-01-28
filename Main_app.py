@@ -33,6 +33,7 @@ def main():
     pressure_low = st.text_input("Enter low blood pressure:")
     glucose = st.text_input("Enter glucose level:")
     kcm = st.text_input("Enter KCM:")
+    troponin = st.text_input("Enter troponin level:")
     female = st.checkbox("Female")
     male = st.checkbox("Male")
        
