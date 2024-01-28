@@ -45,6 +45,9 @@ def main():
 
         # Display the result with the chosen color
         st.markdown(f'<p style="color:{color}; font-size:20px;">AI for Heart Disease Predicted is: {result}</p>', unsafe_allow_html=True)
+        # Display the result with the chosen color and centered text
+        styled_text = f'<p style="color:{color}; font-size:20px; text-align:center;">AI for Heart Disease Predicted is: {result}</p>'
+        st.markdown(styled_text, unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
