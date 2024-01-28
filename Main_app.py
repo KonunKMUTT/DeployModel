@@ -7,7 +7,7 @@ with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Function to make prediction
-def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male):
+def predict_heart_disease(x_new):
     x_new = pd.DataFrame({
         'age': [age],
         'impluse': [impulse],
@@ -21,7 +21,7 @@ def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kc
     })
 
     y_pred_new = model.predict(x_new)
-    return y_pred_new[0]
+    return y_pred_new
 
 # Streamlit app
 def main():
@@ -38,7 +38,7 @@ def main():
     male = st.checkbox("Male")
 
     if st.button("Predict"):
-        result = predict_heart_disease(age, impulse, pressurehigh, pressurelow, glucose, kcm, troponin, female, male)
+        result = predict_heart_disease(x_new)
         st.success(f'AI for Heart Disease Predicted is: {result}')
 
 if __name__ == '__main__':
