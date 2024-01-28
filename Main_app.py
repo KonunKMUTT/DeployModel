@@ -41,7 +41,7 @@ def main():
         result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
         
         # Set color based on the result
-        color = "red" if result == 1 else "green"  # Adjust this condition based on your model's output
+        color = "red" if result == "positive" else "green"  # Adjust this condition based on your model's output
 
         # Apply styling with HTML
         styled_result = f'<p style="color:{color}; font-size:20px; text-align:center; font-weight:bold; background-color:#4B4A54; padding:10px; border-radius: 15px;">{result}</p>'
