@@ -33,11 +33,11 @@ def main():
     pressure_low = st.text_input("Enter low blood pressure:")
     glucose = st.text_input("Enter glucose level:")
     kcm = st.text_input("Enter KCM:")
-    # Use a dropdown for gender selection
-    gender = st.selectbox("Select Gender", ["Female", "Male"])
+    female = st.checkbox("Female")
+    male = st.checkbox("Male")
        
     if st.button("Predict"):
-        gender_binary = 1 if gender == "Male" else 0
+      
         result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
         
         # Set color based on the result
