@@ -34,6 +34,7 @@ def main():
     glucose = st.text_input("Enter glucose level:")
     kcm = st.text_input("Enter KCM:")
     troponin = st.text_input("Enter troponin level:")
+    st.caption('*** Please selected only one choice for gender!! ***')
     female = st.checkbox("Female")
     male = st.checkbox("Male")
        
