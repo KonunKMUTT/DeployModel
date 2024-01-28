@@ -1,3 +1,28 @@
+import pickle
+import pandas as pd
+import streamlit as st
+
+# Load the model
+with open('model.pkl', 'rb') as file:
+    model = pickle.load(file)
+
+# Function to make prediction
+def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male):
+    x_new = pd.DataFrame({
+        'age': [age],
+        'impluse': [impulse],
+        'pressurehight': [pressure_high],
+        'pressurelow': [pressure_low],
+        'glucose': [glucose],
+        'kcm': [kcm],
+        'troponin': [troponin],
+        'female': [female],
+        'male': [male]
+    })
+
+    y_pred_new = model.predict(x_new)
+    return y_pred_new
+
 # Streamlit app
 def main():
     st.markdown('<p style="text-align:center; font-weight:bold; font-size:30px;">Heart Disease Prediction App</p>', unsafe_allow_html=True)
