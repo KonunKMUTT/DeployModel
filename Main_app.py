@@ -42,9 +42,12 @@ def main():
         
         # Set color based on the result
         color = "red" if result == "positive" else "green"  # Adjust this condition based on your model's output
+
         # Apply styling with HTML
         styled_result = f'<p style="color:{color}; font-size:20px; text-align:center; font-weight:bold; background-color:#82A0AA; padding:10px;">AI for Heart Disease Predicted is: {result}</p>'
-        st.markdown(styled_text, unsafe_allow_html=True)
+        
+        # Display the styled result
+        st.markdown(styled_result, unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
