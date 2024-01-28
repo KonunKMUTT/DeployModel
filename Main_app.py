@@ -26,7 +26,7 @@ def main():
     male = st.checkbox("Male")
 
     if st.button("Predict"):
-        result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
+        result = model.predict(x_new)
         st.success(f'AI for Heart Disease Predicted is: {result}')
 if __name__ == '__main__':
     main()
