@@ -41,7 +41,7 @@ def main():
         result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
         
         # Set color based on the result
-        color = "red" if result == 1 else "green"  # Adjust this condition based on your model's output
+        color = "red" if result == "positive" else "green"  # Adjust this condition based on your model's output
 
         # Display the result with the chosen color
         st.markdown(f'<p style="color:{color}; font-size:20px;">AI for Heart Disease Predicted is: {result}</p>', unsafe_allow_html=True)
