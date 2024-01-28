@@ -1,4 +1,3 @@
-
 import pickle
 import pandas as pd
 import streamlit as st
@@ -12,6 +11,8 @@ def predict_heart_disease(x_new):
     y_pred_new = model.predict(x_new)
     return y_pred_new
 
+# Streamlit app
+def main():
     st.title("Heart Disease Prediction App")
 
     age = st.text_input("Enter age:")
@@ -27,3 +28,5 @@ def predict_heart_disease(x_new):
     if st.button("Predict"):
         result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
         st.success(f'AI for Heart Disease Predicted is: {result}')
+if __name__ == '__main__':
+    main()
