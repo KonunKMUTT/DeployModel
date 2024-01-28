@@ -16,8 +16,12 @@ def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kc
         'glucose': [glucose],
         'kcm': [kcm],
         'troponin': [troponin],
-        'female': [female],
-        'male': [male]
+# Use a single checkbox for gender selection
+    gender = st.checkbox("Female / Male")
+    if st.button("Predict"):
+        # Use the value of the gender checkbox to set the appropriate values
+        female = gender
+        male = not gender
     })
 
     y_pred_new = model.predict(x_new)
