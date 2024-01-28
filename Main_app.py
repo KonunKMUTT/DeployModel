@@ -29,8 +29,8 @@ def main():
 
     age = st.text_input("Enter age:")
     impulse = st.text_input("Enter impulse:")
-    pressure_high = st.text_input("Enter high blood pressure:")
-    pressure_low = st.text_input("Enter low blood pressure:")
+    pressurehigh = st.text_input("Enter high blood pressure:")
+    pressurelow = st.text_input("Enter low blood pressure:")
     glucose = st.text_input("Enter glucose level:")
     kcm = st.text_input("Enter KCM:")
     troponin = st.text_input("Enter troponin level:")
@@ -38,7 +38,7 @@ def main():
     male = st.checkbox("Male")
 
     if st.button("Predict"):
-        result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
+        result = predict_heart_disease(age, impulse, pressurehigh, pressurelow, glucose, kcm, troponin, female, male)
         st.success(f'AI for Heart Disease Predicted is: {result}')
 
 if __name__ == '__main__':
