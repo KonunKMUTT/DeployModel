@@ -7,7 +7,7 @@ with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Function to make prediction
-def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male):
+def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, gender):
     x_new = pd.DataFrame({
         'age': [age],
         'impluse': [impulse],
@@ -16,8 +16,7 @@ def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kc
         'glucose': [glucose],
         'kcm': [kcm],
         'troponin': [troponin],
-        'female': [female],
-        'male': [male]
+        'gender': [gender]
         })
 
     y_pred_new = model.predict(x_new)
@@ -34,13 +33,11 @@ def main():
     glucose = st.text_input("Enter glucose level:")
     kcm = st.text_input("Enter KCM:")
     troponin = st.text_input("Enter troponin level:")
-    st.caption('<p style="color:red; font-weight:bold;">*** Please selected only one choice for gender!! ***</p>', unsafe_allow_html=True)
-    female = st.checkbox("Female")
-    male = st.checkbox("Male")
+    gender = st.selectbox("Select gender", ["Female", "Male"])
        
     if st.button("Predict"):
       
-        result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
+        result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, gender)
         
         # Set color based on the result
         color = "red" if result == "positive" else "green"  # Adjust this condition based on your model's output
