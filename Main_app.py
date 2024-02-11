@@ -46,7 +46,7 @@ def main():
        
     if st.button("Predict"):
       
-        result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, gender)
+        result = predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male)
         
         # Set color based on the result
         color = "red" if result == "positive" else "green"  # Adjust this condition based on your model's output
