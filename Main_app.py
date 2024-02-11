@@ -34,6 +34,14 @@ def main():
     kcm = st.text_input("Enter KCM:")
     troponin = st.text_input("Enter troponin level:")
     gender = st.selectbox("Select gender", ["Female", "Male"])
+
+    # Set gender value based on selection
+    if gender == "Female":
+        female = 1
+        male = 0
+    else:
+        female = 0
+        male = 1
        
     if st.button("Predict"):
       
