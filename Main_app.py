@@ -7,7 +7,7 @@ with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 # Function to make prediction
-def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, gender):
+def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kcm, troponin, female, male):
     x_new = pd.DataFrame({
         'age': [age],
         'impluse': [impulse],
@@ -16,7 +16,8 @@ def predict_heart_disease(age, impulse, pressure_high, pressure_low, glucose, kc
         'glucose': [glucose],
         'kcm': [kcm],
         'troponin': [troponin],
-        'gender': [gender]
+        'female': [female],
+        'male': [male]
         })
 
     y_pred_new = model.predict(x_new)
